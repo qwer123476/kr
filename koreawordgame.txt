@@ -1,4 +1,4 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/dosi1100-cmyk/script/refs/heads/main/koreawordgamewords'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/qwer123476/main/koreawordgamewords.txt'))()
 
 local UserInputService = game:GetService("UserInputService")
 local DELETE_WORDS_FILE = "끝말봇_삭제단어.txt"
