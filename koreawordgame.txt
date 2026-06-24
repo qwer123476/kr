@@ -1594,7 +1594,7 @@ startBot = function()
                 if not _G.KWG_Words then return false end
                 local count = 0
                 local BATCH = 1000
-                local GROUP_SKIP = 20
+                local GROUP_SKIP = 15
                 local groupCount = 0
                 for first, wordList in pairs(_G.KWG_Words) do
                         if typeof(wordList) == "table" then
@@ -1740,7 +1740,8 @@ startBot = function()
 
                                 local score
                                 if enemyCount == 0 then
-                                        score = 100000 + bonus
+                                        score = 10000
++ bonus
                                 elseif tooMany then
                                         score = -math.min(enemyCount, 200) * 5 + bonus
                                 else
@@ -1753,7 +1754,7 @@ startBot = function()
                                                 if not canKill then is2Kill = false; break end
                                         end
                                         local cap = math.min(enemyCount, 200)
-                                        score = (is2Kill and 10000 or 0) - cap * 5 + bonus
+                                        score = (is2Kill and 1000 or 0) - cap * 5 + bonus
                                 end
 
                                 wordScore[word] = score
@@ -1781,7 +1782,7 @@ startBot = function()
                 local killable2 = {}
                 for sc, wl in pairs(dictionary) do
                         for _, w in ipairs(wl) do
-                                if (wordScore[w] or 0) >= 10000 then
+                                if (wordScore[w] or 0) >= 1000 then
                                         killable2[sc] = true; break
                                 end
                         end
@@ -1790,7 +1791,7 @@ startBot = function()
                 local n3count = 0
                 for _, wl in pairs(dictionary) do
                         for _, word in ipairs(wl) do
-                                if (wordScore[word] or 0) < 10000 then
+                                if (wordScore[word] or 0) < 1000 then
                                         local lc = lastChar(word)
                                         local opEnds, seenOLC, tooMany = {}, {}, false
                                         for _, v in ipairs(getDuumVariants(lc)) do
