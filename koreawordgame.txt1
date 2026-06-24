@@ -1593,7 +1593,7 @@ startBot = function()
         local function loadFromGlobal()
                 if not _G.KWG_Words then return false end
                 local count = 0
-                local BATCH = 10000
+                local BATCH = 1000
                 local GROUP_SKIP = 20
                 local groupCount = 0
                 for first, wordList in pairs(_G.KWG_Words) do
